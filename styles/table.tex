@@ -1,0 +1,27 @@
+%!TEX root = ../diploma.tex
+
+%Хорошие таблицы
+\usepackage{booktabs}
+%Длинные таблицы
+\usepackage{longtable}
+%Предоставляет окружение таблицы со столбцами, которые
+%позволяют установить их фиксированную ширину в процентах
+%и переносить слова в ячейке
+\usepackage{tabu}
+\usepackage{multirow}
+\usepackage{tabularx}
+\makeatletter
+\def\thickhline{%
+  \noalign{\ifnum0=`}\fi\hrule \@height \thickarrayrulewidth \futurelet
+   \reserved@a\@xthickhline}
+\def\@xthickhline{\ifx\reserved@a\thickhline
+               \vskip\doublerulesep
+               \vskip-\thickarrayrulewidth
+             \fi
+      \ifnum0=`{\fi}}
+\makeatother
+
+\newlength{\thickarrayrulewidth}
+\setlength{\thickarrayrulewidth}{4\arrayrulewidth}
+% \renewcommand{\tablename}{Таблица} % (ГОСТ Р 7.0.11-2011, 5.3.10)
+% \renewcommand{\listtablename}{Список таблиц}
